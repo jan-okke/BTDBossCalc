@@ -24,6 +24,11 @@ public class Boss
         return CalculateMinTime() + timePerSkull * (Skulls + 1);
     }
 
+    public int GetSkullHp(int players, decimal mod = 1)
+    {
+        return (int)(SkullHp * (0.8m + (0.2m * players)) * mod);
+    }
+
     public Boss(string name, decimal skullHp, decimal animationTime, decimal immunityPerSkull, int skulls)
     {
         Name = name;
